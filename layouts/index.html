@@ -102,15 +102,15 @@
             </div>
             <div class="col-xs-12 col-md-8">
                 {{ range first .Site.Params.posts.count (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
-                <div class="article-list-item" itemscope itemprop="blogPost">
+                <div class="article-list-item">
                     {{ if .Params.image }}
                     <a href="{{ .Permalink }}">
-                        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+                        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner">
                     </a>
                     {{end}}
-                    <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+                    <h3 class="article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                     {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
-                    <p class="article-style" itemprop="articleBody">
+                    <p class="article-style">
                         {{ if .Truncated }}
                             {{ .Summary }}
                         {{ else }}

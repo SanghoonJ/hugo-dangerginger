@@ -1,0 +1,38 @@
+{{ if .IsPage }}
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : {{ if eq .Type "post" }}"BlogPosting",{{ end }}
+      "articleSection" : "{{ .Section }}",
+      "name" : "{{ .Title }}",
+      "headline" : "{{ .Title }}",
+      "description" : "{{ .Description }}",
+      "inLanguage" : "en-US",
+      "author" : "{{ .Params.author }}",
+      "creator" : "{{ .Params.author }}",
+      "publisher" : {
+      "@type" : "Organization",
+      "name" : "{{ .Site.Params.organization }}",
+      "logo" : {
+      	"@type" : "ImageObject",
+      	"url" : "{{ .Site.BaseURL }}{{ .Site.Params.org_logo }}"
+        }
+      },
+      "accountablePerson" : "{{ .Site.Params.accountablePerson }}",
+      "copyrightHolder" : "{{ .Site.Params.copyrightHolder }}",
+      "copyrightYear" : "{{ .Date.Format "2006" }}",
+      "datePublished": "{{ .PublishDate.Format $.Site.Params.ISO8601 }}",
+      "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",
+      "url" : "{{ .Permalink }}",
+      "wordCount" : "{{ .WordCount }}",
+      "mainEntityOfPage" : "{{ .Permalink }}",
+      "image" : {
+      	"@type" : "ImageObject",
+        "url" : "{{ .Site.BaseURL }}{{ .Params.image }}",
+        "height" : "{{ .Params.image_height }}",
+        "width" : "{{ .Params.image_width }}"
+      },
+      "keywords" : {{ .Params.tags }}
+    }
+</script>
+{{ end }}

@@ -1,13 +1,13 @@
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<div class="row">
     <div class="col-xs-12 col-md-4">
         <div id="profile">
 
-            <div class="portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}');"></div>
+            <div class="portrait" style="background-image: url('{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}');"></div>
 
             <div class="portrait-title">
-                <h2 itemprop="name">{{ .Site.Params.name }}</h2>
-                <h3 itemprop="jobTitle">{{ .Site.Params.role }}</h3>
-                {{ with .Site.Params.organization }}<h3 itemprop="worksFor">{{ . }}</h3>{{ end }}
+                <h2 >{{ .Site.Params.name }}</h2>
+                <h3 >{{ .Site.Params.role }}</h3>
+                {{ with .Site.Params.organization }}<h3>{{ . }}</h3>{{ end }}
             </div>
 
             <ul class="social-icon">
@@ -29,7 +29,7 @@
 
     <div class="visible-sm visible-xs"></div>
 
-    <div class="col-xs-12 col-md-8" itemprop="description">
+    <div class="col-xs-12 col-md-8">
 
         {{ .Content }}
 
@@ -64,6 +64,5 @@
             {{ end }}
 
         </div>
-
     </div>
 </div>
