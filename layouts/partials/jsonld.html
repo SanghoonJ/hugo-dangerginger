@@ -14,8 +14,8 @@
       "@type" : "Organization",
       "name" : "{{ .Site.Params.organization }}",
       "logo" : {
-      	"@type" : "ImageObject",
-      	"url" : "{{ .Site.BaseURL }}{{ .Site.Params.org_logo }}"
+        "@type" : "ImageObject",
+        "url" : "{{ .Site.BaseURL }}{{ .Site.Params.org_logo }}"
         }
       },
       "accountablePerson" : "{{ .Site.Params.accountablePerson }}",
@@ -27,7 +27,7 @@
       "wordCount" : "{{ .WordCount }}",
       "mainEntityOfPage" : "{{ .Permalink }}",
       "image" : {
-      	"@type" : "ImageObject",
+        "@type" : "ImageObject",
         "url" : "{{ .Site.BaseURL }}{{ .Params.image }}",
         "height" : "{{ .Params.image_height }}",
         "width" : "{{ .Params.image_width }}"
